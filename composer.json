@@ -1,0 +1,21 @@
+{
+    "name": "nodefortytwo/aws-orm",
+    "description": "aws sdk wrapper",
+    "require": {
+        "aws/aws-sdk-php": "*",
+        "purekid/mongodm": "*",
+        "monolog/monolog": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Nodefortytwo\\AwsOrm\\": "src"
+        }
+    },
+    "license": "Apache v2",
+    "authors": [
+        {
+            "name": "Rick Burgess",
+            "email": "nodefortytwo@gmail.com"
+        }
+    ]
+}
