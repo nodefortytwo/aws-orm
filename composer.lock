@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "93afa7bea0524e7cc2f1e3bebeba0fd8",
+    "hash": "e418c2de8057b3e53e50f96b380abc34",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "2.6.11",
+            "version": "2.6.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "1ffd7d850c8c40f97befa917a58467db101786a4"
+                "reference": "88d075461e95111a5e42ead60c68e847c1856cc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1ffd7d850c8c40f97befa917a58467db101786a4",
-                "reference": "1ffd7d850c8c40f97befa917a58467db101786a4",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/88d075461e95111a5e42ead60c68e847c1856cc3",
+                "reference": "88d075461e95111a5e42ead60c68e847c1856cc3",
                 "shasum": ""
             },
             "require": {
@@ -72,7 +72,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2014-07-10 21:15:25"
+            "time": "2014-07-16 21:01:13"
         },
         {
             "name": "guzzle/guzzle",
@@ -167,26 +167,50 @@
             "time": "2014-05-07 17:04:22"
         },
         {
-            "name": "purekid/mongodm",
-            "version": "1.4.1",
+            "name": "monolog/monolog",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/purekid/mongodm.git",
-                "reference": "5f73e87b155fe9356ee628744b62cf3d6d951f31"
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "25b16e801979098cb2f120e697bfce454b18bf23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/purekid/mongodm/zipball/5f73e87b155fe9356ee628744b62cf3d6d951f31",
-                "reference": "5f73e87b155fe9356ee628744b62cf3d6d951f31",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/25b16e801979098cb2f120e697bfce454b18bf23",
+                "reference": "25b16e801979098cb2f120e697bfce454b18bf23",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
             "require-dev": {
-                "chriskite/phactory": "dev-master"
+                "aws/aws-sdk-php": "~2.4, >2.4.8",
+                "doctrine/couchdb": "~1.0@dev",
+                "graylog2/gelf-php": "~1.0",
+                "phpunit/phpunit": "~3.7.0",
+                "raven/raven": "~0.5",
+                "ruflin/elastica": "0.90.*"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "raven/raven": "Allow sending log messages to a Sentry server",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.10.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Purekid\\Mongodm\\": "src"
+                "psr-4": {
+                    "Monolog\\": "src/Monolog"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -195,31 +219,72 @@
             ],
             "authors": [
                 {
-                    "name": "Michael.Gan",
-                    "homepage": "http://github/purekid"
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be",
+                    "role": "Developer"
                 }
             ],
-            "description": "MongoDB ORM that includes support for references,embed and multilevel inheritance.",
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
             "keywords": [
-                "mongodb",
-                "mongodm",
-                "orm"
+                "log",
+                "logging",
+                "psr-3"
             ],
-            "time": "2014-03-19 14:41:16"
+            "time": "2014-06-04 16:30:04"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.5.1",
+            "version": "v2.5.2",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "84533bf98da5486b9395a1d95e9184e04e14aad3"
+                "reference": "2215d2ef6fd7ab24d55576a3d924df575c741762"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/84533bf98da5486b9395a1d95e9184e04e14aad3",
-                "reference": "84533bf98da5486b9395a1d95e9184e04e14aad3",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/2215d2ef6fd7ab24d55576a3d924df575c741762",
+                "reference": "2215d2ef6fd7ab24d55576a3d924df575c741762",
                 "shasum": ""
             },
             "require": {
@@ -264,7 +329,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-08 12:21:33"
+            "time": "2014-07-09 09:05:48"
         }
     ],
     "packages-dev": [

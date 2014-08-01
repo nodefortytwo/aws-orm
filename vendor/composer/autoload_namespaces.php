@@ -7,7 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
-    'Purekid\\Mongodm\\' => array($vendorDir . '/purekid/mongodm/src'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log'),
+    'Nodefortytwo\\MongoOdm\\' => array($baseDir . '/src'),
+    'Nodefortytwo\\Crypt\\' => array($baseDir . '/src'),
     'Nodefortytwo\\AwsOrm\\' => array($baseDir . '/src'),
     'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
     'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
